@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-const baseUrl = 'https://zany-tan-leopard-gown.cyclic.app'
+const baseUrl = import.meta.env.VITE_BASE_URL
 
 
 export default function Navbar({color}) {
@@ -23,6 +23,7 @@ export default function Navbar({color}) {
       console.log(res);
       localStorage.setItem('name', res.data.data.username)
       localStorage.setItem('token', res.data.data.token)
+      localStorage.setItem('uuid', res.data.data.uuid)
       setData(res.data.data)
     })
     .catch((err)=>{

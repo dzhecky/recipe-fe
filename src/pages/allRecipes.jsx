@@ -1,11 +1,13 @@
 import Navbar from "../components/Navbar"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-const baseUrl = 'https://zany-tan-leopard-gown.cyclic.app'
+const baseUrl = import.meta.env.VITE_BASE_URL
 
 
 export default function SearchMenu(){
+    const navigate = useNavigate()
     const [data, setData] = useState()
 
     useEffect(()=>{
@@ -29,6 +31,10 @@ export default function SearchMenu(){
         console.log(data);
     },[data])
 
+    const toDetailMenu = id =>{
+      navigate(`/menu-detail/${id}`)
+    }
+
     return(
       <>
       <Navbar color='secondary'></Navbar>
@@ -37,7 +43,7 @@ export default function SearchMenu(){
 
           {data?.map((item, index)=>{
             return(
-                <h1 key={index+1}>
+                <h1 key={index+1} onClick={()=>toDetailMenu(item.id)}>
                   {index+1} - {item.title}
                   </h1>
             )

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Navigate, Route, Routes, BrowserRouter, Link, useParams } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import SearchMenu from './pages/allRecipes'
+import DetailMenu from './pages/detailMenu'
 
 
 function Register(){
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Navigate to='/searchMenu' replace={true} />}/>
           <Route path='/searchMenu' element={<SearchMenu />}/>
+          <Route path='/menu-detail/:id' element={<DetailMenu />}/>
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
         </Routes>
