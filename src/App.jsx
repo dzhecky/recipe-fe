@@ -3,6 +3,7 @@ import { Navigate, Route, Routes, BrowserRouter, Link, useParams } from 'react-r
 import Navbar from './components/Navbar'
 import SearchMenu from './pages/allRecipes'
 import DetailMenu from './pages/detailMenu'
+import AddMenu from './pages/addMenu'
 
 
 function Register(){
@@ -36,6 +37,7 @@ function App() {
           <Route path='/menu-detail/:id' element={<DetailMenu />}/>
           <Route path='/register' element={<Register />}/>
           <Route path='/login' element={<Login />}/>
+          <Route path='/add-menu' element={<AddMenu />}/>
         </Routes>
       </BrowserRouter>
     </>
