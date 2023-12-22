@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Pacifico&family=Poppins:wght@300;400&display=swap');
+
+nav ul li .nav-link{
+    font-family: Poppins;
+    color: #2E266F;
+    font-weight: bold;
+}
+
+.box1 input{
+    padding: 15px;
+    width: 50%;
+    border-radius: 10px;
+    border: none;
+    padding-left: 45px;
+    position: relative;
+    color: #EFEFEF;
+    background-color: #EFEFEF;
+}
+
+.box1 button{
+    width: 150px;
+}
+
+.box1 h1{
+    width: 500px;
+    font-family: Poppins;
+    font-size: 50px;
+    color: #2E266F;
+}
+
+footer h1{
+    color: #2E266F;
+    font-family: Poppins;
+    font-size: 50px;
+}
+footer p{
+    color: #707070;
+    font-family: airbnb;
+}

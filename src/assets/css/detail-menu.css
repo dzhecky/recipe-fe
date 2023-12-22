@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Pacifico&family=Poppins:wght@300;400&display=swap');
+
+
+nav ul li .nav-link{
+    font-family: poppins;
+    color: #2E266F;
+    font-weight: bold;
+}
+
+.profile{
+    display: flex;
+}
+
+.profile img{
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.detail{
+    padding-left: 10px;
+    text-align: center;
+}
+
+.detail p{
+    margin: 0;
+}
+
+.dates p{
+    margin: 0;
+    text-align: end;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border-left: yellow 7px solid;
+}
+
+.grand-content{
+    text-align: center;
+    color: #2E266F;
+}
+
+.grand-content img{
+    width: 700px;
+}
+
+.ingredients ul li{
+    list-style: none;
+}
+
+.comment{
+    border-top: yellow 5px solid;
+    border-bottom: yellow 5px solid;
+    margin: 100px;
+    padding: 50px;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    margin: 50px;
+}
+
+.user .words{
+    border-left: yellow 5px solid;
+    margin-left: 50px;
+}
+
+.user img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.text p{
+    margin: 0;
+    text-align: center;
+}
+
+.bottom{
+    margin: 100px;
+}
+
+footer h1{
+    color: #2E266F;
+    font-family: poppins;
+    font-size: 50px;
+}
+footer p{
+    color: #707070;
+    font-family: poppins;
+}

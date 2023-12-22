@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Pacifico&family=Poppins:wght@300;400&display=swap');
+
+
+.hero {
+    top: 0;
+    right: 0;
+    position: absolute;
+    background-color: #EFC81A;
+    width: 300px;
+    height: 590px;
+    z-index: -1;
+  }
+
+  .box1{
+    width: 550px;
+}
+.box1 h1{
+    width: 490px;
+    font-family: Poppins;
+    font-size: 50px;
+    color: #2E266F;
+}
+
+.box1 input{
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding-left: 45px;
+    position: relative;
+    background-color: #EFEFEF;
+}
+
+.box1 img{
+    position: absolute;
+    top: 364px;
+    left: 75px;
+    width: 18px;
+    height: 20px;
+}
+.box2 img{
+    width: 400px;
+}
+
+/* section 2 */
+.two .hero2{
+  left: 110px;
+  top: 140px;
+  position: absolute;
+  border: 6px solid #EFC81A;
+  width: 380px;
+  height: 390px;
+  z-index: -1;
+}
+
+.box3{
+    width: 50%;
+}
+.box3 img{
+    width: 400px;
+}
+.box4 button{
+    font-family: poppins;
+    color: white;
+}
+.box4 h1{
+    width: 450px;
+    font-family: Poppins;
+}
+.box4 p{
+    width: 350px;
+}
+
+/* section 3 */
+.three .hero3{
+  height: 390px;
+  width: 300px;
+  top: 120px;
+  left: 0;
+  position: absolute;
+  background-color: #EFC81A;
+  z-index: -1;
+  }
+
+.box5{
+    width: 50%;
+}
+.box5 img{
+    width: 400px;
+}
+.box6 h1{
+    width: 450px;
+    font-family: Poppins;
+}
+.box6 button{
+    font-family: poppins;
+    color: white;
+}
+.box6 p{
+    width: 350px;
+}
+
+/* section 4 */
+
+.four .image{
+    width: 350px;
+    height: 350px; 
+    padding: 20px;
+    position: relative;
+}
+.four .image img{
+    width: 300px;
+}
+
+.four .image p {
+    position: absolute;
+    width: 100px;
+    height: 84px;
+    font-size: 20px;
+    top: 220px;
+    left: 40px;
+    font-family: airbnb;
+    color: #3F3A3A;
+    font-weight: bold;
+  
+  }

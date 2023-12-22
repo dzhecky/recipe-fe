@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Pacifico&family=Poppins:wght@300;400&display=swap');
+
+
+.container-fluid{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form{
+    font-family: poppins;
+}
+form p{
+    font-size: 15px;
+    color: #8692A6;
+}
+
+::placeholder {
+    font-family: Poppins;
+    color: #666;
+    font-size: 13px;
+    padding-left: 5px;
+}

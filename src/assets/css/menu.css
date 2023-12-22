@@ -1,0 +1,531 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-item {
+  color: #2e266f;
+  font-weight: 500;
+}
+
+.logout {
+  text-decoration: none;
+  color: #000;
+}
+
+.profile .logout {
+  font-size: 14px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 90px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: -80px;
+  margin-left: -100px;
+  gap: 20px;
+}
+
+.profile img {
+  width: 40px; /* Adjust image width as needed */
+  border-radius: 50%; /* Add border-radius for a circular profile image */
+  margin-right: 10px; /* Adjust margin between image and text as needed */
+}
+.profile::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 50px;
+  background-color: #efc81a;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  margin-bottom: 5px;
+}
+
+.logout {
+  font-weight: bold;
+  font-size: 17px;
+}
+
+/* detial hero */
+
+.detail-hero {
+  margin-top: 100px;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-detail img {
+  width: 25%;
+}
+
+.profile-detail::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 50px;
+  background-color: #efc81a;
+}
+
+.desc-hero p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.recipes {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.hero-date {
+  text-align: end;
+  font-weight: 400;
+}
+
+.hero-date p {
+  margin-bottom: 7px;
+}
+
+.hero-image {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image h1 {
+  font-size: 3rem;
+  color: #2e266f;
+  font-weight: 500;
+}
+
+.hero-image img {
+  width: 50%;
+  margin-top: 20px;
+}
+
+/* start ingre */
+
+.ingredients {
+  margin-top: 100px;
+  padding: 0 10%;
+}
+
+.ingredients h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #3f3a3a;
+  font-weight: 500;
+  line-height: 62px; /* 129.167% */
+}
+
+.ingredients ul li {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* comment */
+
+.comment {
+  margin-top: 100px;
+  padding: 0 10%;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bookmark {
+  width: 40px;
+  background-color: #efc81a;
+  text-align: center;
+  padding: 1px 0;
+  border-radius: 10px;
+}
+
+.like img {
+  width: 80%;
+}
+
+.like {
+  width: 40px;
+  border: 1px solid #efc81a;
+  text-align: center;
+  padding: 2px 0;
+  border-radius: 10px;
+}
+
+.wrapper-comment {
+  margin-top: 40px;
+  padding: 80px 0;
+  border-bottom: 3px solid #efc81a;
+  border-top: 3px solid #efc81a;
+}
+
+.card-comment {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.profile-comment {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-comment img {
+  width: 17%;
+}
+
+.profile-comment::after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 50px;
+  background-color: #efc81a;
+}
+
+.desc {
+  margin-right: 90px;
+}
+
+/* textarea */
+
+.textarea {
+  margin-top: 100px;
+  padding: 0 10%;
+}
+
+textarea {
+  width: 500px;
+  height: 150px;
+  padding: 30px;
+  background-color: #f6f5f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+}
+
+.btn-send {
+  margin-left: 10%;
+  padding: 13px 10%;
+  margin-top: 30px;
+  background-color: #ffb167;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+}
+
+.footer-container {
+  width: 100%;
+  background-color: #efc81a;
+  height: 100%;
+  margin-top: 180px;
+  padding: 40px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.footer h1 {
+  font-size: 52px;
+  font-weight: 400;
+  color: #2e266f;
+  margin-bottom: 31px;
+}
+
+.footer p {
+  font-size: 20px;
+  color: #707070;
+}
+
+.footer-nav {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-list ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.nav-list ul li a {
+  color: #707070;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav-list ul .copyright {
+  position: absolute;
+  left: 600px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+  .profile::before {
+    display: none;
+  }
+
+  .navbar-nav {
+    font-size: 20px;
+    background-color: #e6e3e3;
+    padding-left: 30px;
+    margin-top: 3px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-nav a {
+    margin-bottom: 16px;
+    color: #000;
+  }
+
+  .profile img {
+    margin-left: 50px;
+    width: 100px;
+  }
+
+  .profile {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desc {
+    padding: 0 9px;
+    margin-top: 16px;
+    /* margin-right: -1px; */
+    text-align: center;
+  }
+
+  .detail-hero {
+    width: 100%;
+    padding: 3%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* background-color: #b4bdff; */
+  }
+
+  .profile-detail {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 26px;
+    height: 90px;
+    /* border: 1px solid red; */
+    background-color: #f4ce14;
+    border-radius: 10px;
+    /* Tambahkan efek box-shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .profile-detail img {
+    width: 60px;
+  }
+
+  .hero-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    gap: 40px;
+    margin: 40px auto;
+    /* border: 1px solid red; */
+  }
+
+  .profile-detail::before {
+    display: none;
+  }
+
+  .detail-hero {
+    margin-top: 30px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .desc-hero {
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  .name {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin: 0;
+  }
+
+  .hero-image img {
+    width: 90%;
+  }
+
+  .ingredients {
+    margin-top: 30px;
+    padding: 0 6%;
+  }
+
+  .ingredients ul {
+    padding: 0;
+  }
+  .comment {
+    padding: 0 6%;
+  }
+
+  .profile-comment::after {
+    display: none;
+  }
+
+  .profile-comment {
+    padding: 0;
+    margin: 0;
+  }
+
+  .profile-comment img {
+    width: 40px;
+  }
+
+  .card-comment {
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #f1eaff;
+    border-radius: 10px;
+    /* Tambahkan efek box-shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .comment-text {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+  }
+  .textarea {
+    margin-top: 60px;
+    padding: 0 6%;
+  }
+
+  textarea {
+    width: 320px;
+    height: 150px;
+    padding: 30px;
+    background-color: #f6f5f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+
+  .btn-send {
+    margin: 20px 20px;
+  }
+
+  .footer h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .footer p {
+    font-size: 15px;
+    margin-top: 0;
+  }
+  .nav-list ul {
+    flex-wrap: wrap;
+  }
+  .nav-list ul li a {
+    font-size: 14px;
+  }
+
+  .nav-list ul .copyright {
+    position: static;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  .my-nav.collapse {
+    display: flex !important;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .navbar-nav.gap-5 {
+    order: 2; /* Mengubah urutan menu navbar */
+    flex-direction: row;
+    margin-left: 0px;
+    gap: 60px;
+    width: 330px;
+  }
+
+  .navbar-nav.ms-auto {
+    margin-top: 0;
+    order: 1; /* Mengubah urutan profil */
+  }
+
+  .profile {
+    margin-left: 250px;
+  }
+  .hero-image img {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .nav-list ul .copyright {
+    position: static;
+  }
+}

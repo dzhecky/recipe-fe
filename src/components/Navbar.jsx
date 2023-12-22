@@ -1,51 +1,22 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-const baseUrl = import.meta.env.VITE_BASE_URL;
-
-export default function Navbar({ color }) {
+import { useNavigate } from "react-router-dom";
+import Profile from '../assets/prof.png'
+import { useState } from "react";
+import '../assets/css/navbar.css'
+export default function Navbar({ nav1, nav2, nav3, link1, link2, link3 }) {
   const [data, setData] = useState();
+  const navigate = useNavigate();
 
-  const Log = () => {
-    if (localStorage.getItem("name")) {
-      setData(null);
-      localStorage.clear();
-      return;
-    }
-
-    axios
-      .post(
-        baseUrl + `/user/login`,
-        {
-          email: "member@recipe.com",
-          password: "testing1",
-        },
-        { headers: { "content-type": "application/x-www-form-urlencoded" } }
-      )
-      .then((res) => {
-        console.log(res);
-        localStorage.setItem("name", res.data.data.username);
-        localStorage.setItem("token", res.data.data.token);
-        localStorage.setItem("uuid", res.data.data.uuid);
-        setData(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    console.log("axios login");
+  const LogoutHandle = () => {
+    setData(null);
+    localStorage.clear();
+    navigate("/");
+    return;
   };
-
-  useEffect(() => {
-    let item = {
-      username: localStorage.getItem("name"),
-      token: localStorage.getItem("token"),
-    };
-    localStorage.getItem("name") && setData(item);
-  }, []);
 
   return (
     <div>
-      <nav className={`navbar navbar-expand-lg navbar-light bg-${color} px-5`}>
+      <nav className="navbar navbar-expand-lg navbar-light p-5">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -72,36 +43,44 @@ export default function Navbar({ color }) {
               ></button>
             </div>
             <div className="offcanvas-body" id="navbarNav">
-              <ul className="navbar-nav">
+              <ul className="navbar-nav gap-5">
                 <li className="nav-item">
-                  <Link to="/register" className="nav-link">
-                    Register
+                  <Link to={link1} className="nav-link">
+                    {nav1}
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/Login" className="nav-link">
-                    Login
+                  <Link to={link2} className="nav-link">
+                    {nav2}
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/" className="nav-link">
-                    Search Menu
+                  <Link to={link3} className="nav-link">
+                    {nav3}
                   </Link>
                 </li>
-                {data ? (
-                  <li className="nav-item">
-                    <Link to="/add-menu" className="nav-link">
-                      Add menu
-                    </Link>
-                  </li>
-                ) : null}
               </ul>
+              {localStorage.getItem('name') ? <>
+                <div className="navbar-nav ms-auto">
+                  <div className="profiles">
+                    <img
+                      src={Profile}
+                      alt=""
+                      className="rounded-circle"
+                      width="40"
+                      height="40"
+                    />
+                    <div className="desc ml-2">
+                      <p className="name m-auto">{localStorage.getItem('name')}</p>
+                      <Link onClick={LogoutHandle} className="nav-link">
+                        Logout
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </>: null}
             </div>
           </div>
-          <h2>{data?.username}</h2>
-          <button className="btn btn-warning ms-3" onClick={Log}>
-            {data ? "Logout" : "Login"}
-          </button>
         </div>
       </nav>
     </div>

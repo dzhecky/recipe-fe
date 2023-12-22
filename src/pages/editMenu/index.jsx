@@ -1,60 +1,75 @@
 import Navbar from "../../components/Navbar";
+import { getMenuDetail } from "../../redux/actions/menu";
+import { useDispatch, useSelector } from "react-redux";
 import Foot from "../../components/footer";
 import '../../assets/css/add-menu.css'
 import { useNavigate } from "react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 const baseUrl = import.meta.env.VITE_BASE_URL
 
-export default function AddMenu() {
+export default function EditMenu() {
   const navigate = useNavigate();
   const [photo, setPhoto] = useState();
-  const [category, setCategory] = useState()
+  const dispatch = useDispatch()
+  const menuDetail = useSelector((state)=>state.menuDetail)
+  
   const [inputData, setInputData] = useState({
     id:"",
     title: "",
     ingredients: "",
-    category_id: "",
+    category_id: 1,
     photo_url: ""
   });
 
-  const postData = (event) => {
-    event.preventDefault()
-    let bodyData = new FormData()
-    bodyData.append('id', inputData.id)
-    bodyData.append('title', inputData.title)
-    bodyData.append('ingredients', inputData.ingredients)
-    bodyData.append('category_id', inputData.category_id)
-    bodyData.append('photo', photo)
-    console.log(bodyData);
+  useEffect(() => {
+    dispatch(getMenuDetail());
+  }, [dispatch]);
 
-    axios.post(baseUrl + '/recipe', bodyData,{
-      headers:{
-        'Authorization' : `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type' : 'multipart/form-data'
-      }
-    }).then((res)=>{
-      console.log('succes add data');
-      console.log(res);
-      navigate('/searchMenu')
-    }).catch((err)=>{
-      console.log('failed add data');
-      console.log(err);
-    })
+  
+  useEffect(()=>{
+      if(inputData){
+          setInputData({
+              id: inputData.id,
+              title: inputData.title,
+              ingredients: inputData.ingredients,
+              category_id: inputData.category_id,
+              photo: inputData.photo
+            })
+        }
+    },[])
 
-  };
+    const putData = (event) => {
+      event.preventDefault()
+      let bodyData = new FormData()
+      bodyData.append('id', inputData.id)
+      bodyData.append('title', inputData.title)
+      bodyData.append('ingredients', inputData.ingredients)
+      bodyData.append('category_id', inputData.category_id)
+      bodyData.append('photo', photo)
+      console.log(bodyData);
+  
+      axios.put(baseUrl + `/recipe/${menuDetail.data.id}`, bodyData,{
+        headers:{
+          'Authorization' : `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type' : 'multipart/form-data'
+        }
+      }).then((res)=>{
+        console.log('succes add data');
+        console.log(res);
+        navigate('/')
+      }).catch((err)=>{
+        console.log('failed add data');
+        console.log(err);
+      })
+  
+    };
 
   const onChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
     console.log("input", e.target.name, e.target.value);
     console.log(inputData);
   };
-
-  const onChangeCategory = (e) => {
-    setCategory(e.target.category)
-    console.log("add category", e.target.category_id);
-    console.log(inputData);
-  }
 
   const onChangePhoto = (e) =>{
     setPhoto(e.target.files[0])
@@ -64,9 +79,9 @@ export default function AddMenu() {
 
   return (
     <>
-      <Navbar nav1='Home' link1='/home' nav2='Search Menu' link2='/searchMenu' nav3='Profile' link3='/profile'></Navbar>  
+      <Navbar nav1='Home' link1='/home' nav2='Search Menu' link2='/searchMenu' nav3='Profile' link3='/profile'></Navbar>
       <div className="container-fluid d-flex justify-content-center mt-5">
-        <form onSubmit={postData} className="d-grid w-75">
+        <form onSubmit={putData} className="d-grid w-75">
           {photo && <img src={inputData.photo_url} width={200} /> }
           <div className="mb-3">
             <label className="form-label">Select Photo</label>
@@ -104,7 +119,7 @@ export default function AddMenu() {
             />
           </div>
           <div className="mb-3 w-25">
-            <select className="form-select" onChange={onChangeCategory} id="category_id" name="category_id">
+            <select className="form-select">
               <option selected>Category</option>
               <option value={1}>Main Course</option>
               <option value={2}>Appetizer</option>

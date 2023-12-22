@@ -1,0 +1,28 @@
+.profiles {
+    display: flex;
+    align-items: center;
+    margin-left: 700px;
+    gap: 20px;
+  }
+  
+  .profiles img {
+    width: 40px; /* Adjust image width as needed */
+    border-radius: 50%; /* Add border-radius for a circular profile image */
+    margin-right: 10px; /* Adjust margin between image and text as needed */
+  }
+  .profiles::before {
+    content: "";
+    display: block;
+    width: 3px;
+    height: 50px;
+    background-color: #efc81a;
+  }
+  
+  .desc {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .name {
+    margin-bottom: 5px;
+  }
