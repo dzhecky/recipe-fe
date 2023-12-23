@@ -1,8 +1,7 @@
 import Navbar from "../../components/Navbar"
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import Foot from "../../components/footer";
+import Foot from "../../components/Footer/";
 import '../../assets/css/search-menu.css'
 import { useDispatch, useSelector } from "react-redux";
 import { getMenu } from "../../redux/actions/menu";
