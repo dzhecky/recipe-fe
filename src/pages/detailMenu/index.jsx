@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar"
-import Foot from "../../components/footer"
+import Foot from "../../components/Footer/";
 import '../../assets/css/detail-menu.css'
 import Profile from '../../assets/prof.png'
 import { useEffect } from "react"

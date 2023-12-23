@@ -1,5 +1,5 @@
 import Navbar from "../../components/Navbar";
-import Foot from "../../components/footer";
+import Foot from "../../components/Footer/";
 import '../../assets/css/add-menu.css'
 import { useNavigate } from "react-router";
 import { useState } from "react";

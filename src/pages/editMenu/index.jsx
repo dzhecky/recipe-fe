@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import { getMenuDetail } from "../../redux/actions/menu";
 import { useDispatch, useSelector } from "react-redux";
-import Foot from "../../components/footer";
+import Foot from "../../components/Footer/";
 import '../../assets/css/add-menu.css'
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
