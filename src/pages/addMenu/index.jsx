@@ -11,7 +11,6 @@ export default function AddMenu() {
   const [photo, setPhoto] = useState();
   const [category, setCategory] = useState()
   const [inputData, setInputData] = useState({
-    id:"",
     title: "",
     ingredients: "",
     category_id: "",
@@ -21,7 +20,6 @@ export default function AddMenu() {
   const postData = (event) => {
     event.preventDefault()
     let bodyData = new FormData()
-    bodyData.append('id', inputData.id)
     bodyData.append('title', inputData.title)
     bodyData.append('ingredients', inputData.ingredients)
     bodyData.append('category_id', inputData.category_id)
@@ -71,16 +69,6 @@ export default function AddMenu() {
           <div className="mb-3">
             <label className="form-label">Select Photo</label>
             <input className="form-control" type="file" id="validatedCustomFile" onChange={onChangePhoto} required />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              id="id"
-              name="id"
-              placeholder="Your Menu ID"
-              onChange={onChange}
-            />
           </div>
           <div className="mb-3">
             <input
